@@ -1,20 +1,20 @@
-import { useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { ThemeProvider } from "@/components/theme-provider"
-
-
+import { OktoProvider, BuildType } from 'okto-sdk-react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from '@/pages/login';
+import Home from '@/pages/home';
+ 
+const OKTO_CLIENT_API_KEY = import.meta.env.VITE_OKTO_SDK;
+ 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <div className='text-2xl'>
-        hello world
-        <Button variant="default">hello</Button>
-      </div>
-    </ThemeProvider>
-  )
+    <Router>
+      <OktoProvider apiKey={OKTO_CLIENT_API_KEY} buildType={BuildType.SANDBOX}>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </OktoProvider>
+    </Router>
+  );
 }
-
-export default App
+export default App;

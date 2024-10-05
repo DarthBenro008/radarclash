@@ -7,3 +7,5 @@ test-ledger
 .yarn
 radarclash-app/node_modules
 radarclash-app/.pnpm
+.env
+**/.env

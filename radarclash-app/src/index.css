@@ -67,6 +67,9 @@
 }
  
 @layer base {
+  .container {
+    @apply max-w-screen-md;
+  }
   * {
     @apply border-border;
   }

@@ -1,7 +1,7 @@
-import Radar from "../../../public/radarfind.png"
-import RadarClashLogo from "../../../public/rc_logo.svg"
-import Internet from "../../../public/internet.svg"
-import RadarPeople from "../../../public/radar_people.svg"
+import Radar from "../..//assets//radarfind.png"
+import RadarClashLogo from "../..//assets//rc_logo.svg"
+import Internet from "../..//assets//internet.svg"
+import RadarPeople from "../..//assets//radar_people.svg"
 import { Card, CardContent } from "../ui/card"
 import { useNavigate } from "react-router-dom"
 

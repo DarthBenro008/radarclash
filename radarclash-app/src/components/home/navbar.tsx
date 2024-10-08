@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { CompassIcon, UserIcon } from "lucide-react";
 import { useEffect, useState } from "react";
-import Image from "../../../public/rc.png";
+import Image from "../..//assets//rc.png";
 
 export default function Navbar({ pageCallback }: { pageCallback: (page: string) => void }) {
     const pages = ["Explore", "Profiling", "Clash"]

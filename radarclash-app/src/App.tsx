@@ -4,6 +4,7 @@ import Login from '@/pages/login';
 import Home from '@/pages/home';
 import CreateClash from './pages/create-clash';
 import ClashRoom from './pages/clash-room';
+import Location from './pages/location';
  
 const OKTO_CLIENT_API_KEY = import.meta.env.VITE_OKTO_SDK;
  
@@ -16,6 +17,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/create-clash" element={<CreateClash />} />
           <Route path="/clash-room" element={<ClashRoom />} />
+          <Route path="/location" element={<Location />} />
         </Routes>
       </OktoProvider>
     </Router>

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from '@/pages/login';
 import Home from '@/pages/home';
 import CreateClash from './pages/create-clash';
-import { ClashRoom } from './pages/clash-room';
+import ClashRoom from './pages/clash-room';
  
 const OKTO_CLIENT_API_KEY = import.meta.env.VITE_OKTO_SDK;
  

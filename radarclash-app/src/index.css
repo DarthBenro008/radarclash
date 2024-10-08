@@ -51,11 +51,11 @@
     --secondary: 94 4% 17%;
     --secondary-foreground: 80 88% 84%;
  
-    --muted: 0 0% 40%;
-    --muted-foreground: 84 3% 45%;
+    --muted: 80 8% 4%;
+    --muted-foreground: 80 2% 55%;
  
     --accent: 100 4% 13%;
-    --accent-foreground: 80 45% 94%
+    --accent-foreground: 12 45% 94%
  
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 80 45% 94%;
@@ -65,11 +65,18 @@
     --ring: 82 98% 80%;
   }
 }
- 
-@layer base {
-  .container {
-    @apply max-w-screen-md;
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+@layer base {
   * {
     @apply border-border;
   }

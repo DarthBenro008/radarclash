@@ -6,6 +6,7 @@ import axios from "axios";
 import { Button } from "@/components/ui/button";
 import { AlertDialog } from "@radix-ui/react-alert-dialog";
 import { AlertDialogContent, AlertDialogTrigger } from "@/components/ui/alert-dialog";
+import { toast } from "sonner";
 
 export default function Login() {
 
@@ -32,7 +33,9 @@ export default function Login() {
         authenticate(idToken, async (authResponse: any, error: any) => {
             if (authResponse) {
                 console.log("auth token received", authToken);
-                navigate("/home");
+                window.localStorage.setItem("authToken", authToken!!);
+                toast.success("Login Successful");
+                navigate("/location");
             }
             if (error) {
                 console.error("Authentication error:", error);
@@ -42,21 +45,6 @@ export default function Login() {
 
     return (
         <div className="bg-[url('/onboarding.png')] relative bg-cover bg-center bg-no-repeat h-screen">
-            {/* {!authToken ? (
-                <GoogleLogin
-                    onSuccess={handleGoogleLogin}
-                    onError={() => {
-                        console.log("Login Failed");
-                    }}
-                    useOneTap
-                    promptMomentNotification={(notification) =>
-                        console.log("Prompt moment notification:", notification)
-                    }
-                />
-            ) : (
-                <> Authenticated </>
-            )} */}
-
             <div className="flex flex-col gap-4 h-screen items-center justify-end">
                 <div className=" flex flex-col items-center gap-2 pb-14">
                     <img src="/logo.svg" />
@@ -81,6 +69,7 @@ export default function Login() {
                                         <GoogleLogin
                                             onSuccess={handleGoogleLogin}
                                             onError={() => {
+                                                toast.error("Login Failed");
                                                 console.log("Login Failed");
                                             }}
                                             useOneTap

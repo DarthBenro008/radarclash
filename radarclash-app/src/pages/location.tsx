@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
 export default function Location() {
+    const navigate = useNavigate();
     function getLocation() {   
         console.log('getLocation was called') 
         if(navigator.geolocation) {
@@ -22,13 +23,13 @@ export default function Location() {
     function showPosition(data: any){
         console.log('posititon accepted', data)
         toast.success('Location access granted')
+        navigate("/home");
     }
 
     const handleAllowLocation = () => {
         getLocation();
     }
 
-    const navigate = useNavigate();
     return (
         <div className="relative h-screen">
             <img src="/location.svg" />

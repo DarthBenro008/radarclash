@@ -4,6 +4,7 @@ import SolCoin from "../../../public/solcoin.png"
 import { Progress } from "@/components/ui/progress"
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
 import { Button } from "../ui/button"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 function AvatarCard() {
     return (
@@ -25,7 +26,7 @@ function AvatarCard() {
 }
 
 
-function LevelAndRanks(){
+function LevelAndRanks() {
     return (
         <div className="flex flex-col gap-2">
             <div className="flex flex-row w-full justify-between">
@@ -52,7 +53,7 @@ function LevelAndRanks(){
     )
 }
 
-function OktoWallet(){
+function OktoWallet() {
     return (
         <div className="p-6">
             <Card>
@@ -77,6 +78,28 @@ function OktoWallet(){
     )
 }
 
+function Challenges() {
+    return (
+        <div className="w-full">
+            <Tabs defaultValue="challenges" className="w-full px-4">
+                <TabsList className="w-full">
+                    <TabsTrigger className="w-full" value="challenges">Challenges</TabsTrigger>
+                    <TabsTrigger className="w-full" value="clash">Clash</TabsTrigger>
+                </TabsList>
+                <TabsContent value="challenges">
+                    <div className="w-full flex flex-col gap-2">
+                        <div className="flex flex-row justify-between">
+                            <p className="text-xl">Challenges</p>
+                            <p className="text-sm text-gray-400">View all</p>
+                        </div>
+                    </div>
+                </TabsContent>
+                <TabsContent value="leaderboard">Leaderboard</TabsContent>
+            </Tabs>
+        </div>
+    )
+}
+
 export default function Explore() {
     return (
         <div className="flex flex-col h-full w-full">
@@ -89,8 +112,8 @@ export default function Explore() {
             <div>
                 <OktoWallet />
             </div>
-            <div>
-                Challenges scorllable
+            <div className="w-full">
+                <Challenges />
             </div>
         </div>
     )

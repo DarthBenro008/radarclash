@@ -25,7 +25,7 @@ export default function Home() {
 
     return (
         <div className='flex flex-col h-screen w-screen relative'>
-            <div className='flex-grow flex flex-col items-center'>
+            <div className='flex-grow flex flex-col items-center overflow-y-auto'>
                 {logicalRender()}
             </div>
             <div className='w-full'>
